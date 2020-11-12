@@ -46,3 +46,26 @@ If you want to learn more about building native executables, please consult http
 # Command Mode
 
 Guide: https://quarkus.io/guides/command-mode-reference
+
+# Tips and tricks
+
+## Docker
+```
+./mvnw package -Pnative -Dquarkus.native.container-runtime=docker
+```
+## Podman
+```
+./mvnw package -Pnative -Dquarkus.native.container-runtime=podman
+```
+
+## GRALVM Config
+```
+export PATH=$PATH:$HOME/Development/graalvm/bin/
+export GRAALVM_HOME=$HOME/Development/graalvm/
+export JAVA_HOME=${GRAALVM_HOME}
+```
+
+### Install the native-image tool using gu install:
+```
+${GRAALVM_HOME}/bin/gu install native-image
+```
